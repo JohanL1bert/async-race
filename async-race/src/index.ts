@@ -287,7 +287,6 @@ class Manager {
     }
 
     public getDistanceBeetwenElement(parentELement: HTMLElement) {
-        /* console.log(parentELement); */
         const car = parentELement.querySelector('svg') as unknown;
         const finish = parentELement.querySelector('.car__finish') as HTMLElement;
         const carElement = car as HTMLElement;
@@ -351,15 +350,12 @@ class Manager {
                     const wins = 1;
                     const splitData = `${name}, Time: ${time} s`;
                     if (this.checkerStop === true) {
-                        /* console.log('1'); */
                         this.updateManager.AddTextContentToHTMLElement(element, '');
                         this.checkerStop = false;
                     } else {
-                        /* console.log('2'); */
                         this.updateManager.AddTextContentToHTMLElement(element, splitData);
                         this.checkerStop = false;
                     }
-                    /* this.updateManager.AddTextContentToHTMLElement(element, splitData); */
                     const isExistInState = this.filterState(id);
                     if (isExistInState === undefined) {
                         await this.api.createWinner({ id, wins, time });
@@ -403,7 +399,6 @@ class Manager {
         const getBtnCarRemove = this.updateManager.getAllHTMLElement('car__remove');
         getBtnCarRemove.forEach((item) => {
             item.addEventListener('click', () => {
-                //FIXME: порефакторить
                 const value = item.closest('.car');
                 const number = value?.getAttribute('data-value');
                 const id = Number(number);

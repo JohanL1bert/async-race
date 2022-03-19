@@ -14,7 +14,7 @@ class API {
         this.winners = `${this.baseUrl}/winners`;
         this.state = state;
     }
-    //Переписать. Добавить енумы. Возвращать что-то явно
+
 
     public errorHandlerUndefined(res: IcreateCar | undefined): IcreateCar {
         if (res === undefined) {
